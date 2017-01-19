@@ -1,0 +1,11 @@
+network.host: _site_
+#0.0.0.0
+
+# this value is required because we set "network.host"
+# be sure to modify it appropriately for a production cluster deployment
+discovery.zen.minimum_master_nodes: 1
+
+bootstrap.memory_lock: true
+
+# ElasticSearch doesn't start if the data directory is redirected in any form, also index.store.type doesn't help
+# index.store.type: simplefs ElasticSearch doesn't start if the data directory is redirected in any form
