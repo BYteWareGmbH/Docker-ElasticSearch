@@ -26,13 +26,9 @@ RUN Write-Host ('Downloading {0} ...' -f $env:ES_DOWNLOAD_URL); \
 	\
   Write-Host 'Complete.';
   
-WORKDIR C:\\${ES_FILENAME}
+COPY config C:\\${ES_FILENAME}\\config
 
-COPY config ./config
-
-WORKDIR C:\\ 
-
-# Vloume doesn't work at the moment in windows containers; ElasticSearch doesn't start if the data directory is redirected in any form
+# Volume doesn't work at the moment in windows containers; ElasticSearch doesn't start if the data directory is redirected in any form
 # VOLUME C:\\${ES_FILENAME}\\data  
 
 EXPOSE 9200 9300
