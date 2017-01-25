@@ -4,7 +4,7 @@ FROM bytewaregmbh/java:8.112_de-de
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 ARG ES_VERSION
-ENV ES_VERSION=${ES_VERSION:-5.1.1}
+ENV ES_VERSION=${ES_VERSION:-5.1.2}
 ENV ES_FILENAME elasticsearch-${ES_VERSION}
 ENV ES_DOWNLOAD_URL https://artifacts.elastic.co/downloads/elasticsearch/${ES_FILENAME}.zip
 RUN Write-Host ('Downloading {0} ...' -f $env:ES_DOWNLOAD_URL); \
